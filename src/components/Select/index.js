@@ -16,9 +16,9 @@ const Select = ({
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
   const changeValue = (newValue) => {
-    onChange();
-    setValue(newValue);
-    setCollapsed(newValue);
+    onChange(newValue);  //  newValue to onChange handler
+  setValue(newValue);
+  setCollapsed(true);  //  set this to true, not newValue
   };
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">
