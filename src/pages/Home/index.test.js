@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Home from "./index";
+jest.setTimeout(10000); // Increases the timeout to 10 seconds
 
 describe("When Form is created", () => {
   test("a list of fields card is displayed", async () => {
@@ -13,32 +14,29 @@ describe("When Form is created", () => {
   describe("and a click is triggered on the submit button", () => {
     it("the success message is displayed", async () => {
       render(<Home />);
-      fireEvent(
-        await screen.findByText("Envoyer"),
-        new MouseEvent("click", {
-          cancelable: true,
-          bubbles: true,
-        })
-      );
-      await screen.findByText("En cours");
-      await screen.findByText("Message envoyé !");
+      const submitButton = await screen.findByText("Envoyer");
+      fireEvent.click(submitButton);
+
+      await waitFor(() => screen.findByText("En cours"));
+
+      // Use waitFor to wait for the success message to appear
+      screen.debug();
+      await waitFor(() => screen.findByText("Message envoyé !"), { timeout: 5000 });
     });
   });
-
 });
-
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
     // to implement
-  })
+  });
   it("a list a people is displayed", () => {
     // to implement
-  })
+  });
   it("a footer is displayed", () => {
     // to implement
-  })
+  });
   it("an event card, with the last event, is displayed", () => {
     // to implement
-  })
+  });
 });

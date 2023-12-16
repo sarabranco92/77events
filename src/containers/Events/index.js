@@ -24,7 +24,6 @@ const EventList = () => {
 
   
   const changeType = (evtType) => {
-    console.log("Current Type:", type, "Filtered Events:", filteredEvents);
     setCurrentPage(1);
     setType(evtType);
   };
