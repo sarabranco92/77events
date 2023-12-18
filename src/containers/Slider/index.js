@@ -29,7 +29,7 @@ const Slider = () => {
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
         <div
-          key={event.id} // Utilisation de l'id de l'événement comme clé unique
+          key={event.title} // Utilisation de l'id de l'événement comme clé unique
           className={`SlideCard SlideCard--${index === idx ? "display" : "hide"}`} // Affichage conditionnel basé sur l'index
         >
           <img src={event.cover} alt="forum" />
@@ -46,7 +46,7 @@ const Slider = () => {
         <div className="SlideCard__pagination">
           {byDateDesc?.map((event, radioIdx) => (
             <input
-              key={event.id} // Clé unique pour chaque bouton radio
+              key={event.title} // Clé unique pour chaque bouton radio
               type="radio"
               name="radio-button"
               checked={index === radioIdx} // Détermine quel bouton radio est sélectionné

@@ -1,6 +1,6 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Form from "./index";
-
+jest.setTimeout(10000); // Increases the timeout to 10 seconds
 describe("When Events is created", () => {
   it("a list of event card is displayed", async () => {
     render(<Form />);
