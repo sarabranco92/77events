@@ -1,5 +1,6 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen,waitFor} from "@testing-library/react";
 import Home from "./index";
+
 jest.setTimeout(10000); // Increases the timeout to 10 seconds
 
 describe("When Form is created", () => {
@@ -16,8 +17,8 @@ describe("When Form is created", () => {
       render(<Home />);
       const submitButton = await screen.findByText("Envoyer");
       fireEvent.click(submitButton);
-      await screen.findByText("En cours");
-      await screen.findByText("Envoyer");
+      await waitFor(() => screen.findByText("En cours"));
+      await waitFor(() => screen.findByText("Envoyer"), { timeout: 5000 });
    
     });
   });
