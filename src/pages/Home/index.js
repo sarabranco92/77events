@@ -16,7 +16,7 @@ import { useData } from "../../contexts/DataContext";
 const Page = () => {
 
    // Obtenez la dernière prestation à partir des données
-   const { data, error } = useData();
+   const { data } = useData();
    // recuperer la dernier image du data
    const last =
      data && data.events && data.events.length > 0
@@ -32,7 +32,7 @@ const Page = () => {
       <section className="SliderContainer">
         <Slider />
       </section>
-      <section className="ServicesContainer">
+      <section className="ServicesContainer" id="nos-services">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
@@ -61,11 +61,11 @@ const Page = () => {
           </ServiceCard>
         </div>
       </section>
-      <section className="EventsContainer">
+      <section className="EventsContainer" id="nos-realisations">
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
-      <section className="PeoplesContainer">
+      <section className="PeoplesContainer" id="notre-equipe">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
@@ -126,6 +126,7 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
       <h3>Notre derniére prestation</h3>
+
         {last && (
         <Modal Content={< ModalEvent event={last} />}>
           {({ setIsOpened }) => (
@@ -139,7 +140,7 @@ const Page = () => {
           )}
         </Modal>
         )}
-                  {error && <div>Une erreur est survenue</div>}
+      
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
