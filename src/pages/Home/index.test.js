@@ -34,7 +34,9 @@ describe("When a page is created", () => {
   it("a footer is displayed", () => {
     // to implement
   });
-  it("an event card, with the last event, is displayed", () => {
-    // to implement
+  
+  it("an event card, with the last event, is displayed", async () => {
+    render(<Home />);
+    await screen.findByText("Notre derniére prestation");
   });
 });

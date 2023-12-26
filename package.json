@@ -1,7 +1,7 @@
 {
   "name": "77-events",
   "version": "0.1.0",
-  "homepage": "https://sarabranco92.github.io/77events/",
+ "homepage": "sarabranco92.github.io/77events/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -16,7 +16,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",

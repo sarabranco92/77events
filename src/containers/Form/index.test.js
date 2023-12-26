@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Form from "./index";
 
 jest.setTimeout(10000); // Increases the timeout to 10 seconds
-describe("When Events is created", () => {
+describe("When Form is created", () => {
   it("a list of event card is displayed", async () => {
     render(<Form />);
     await screen.findByText("Email");
@@ -24,6 +24,7 @@ describe("When Events is created", () => {
       );
       await waitFor(() => screen.findByText("En cours"));
       await waitFor(() => screen.findByText("Envoyer"), { timeout: 5000 });
+      
       expect(onSuccess).toHaveBeenCalled();
     });
   });
