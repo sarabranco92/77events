@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sarabranco92.github.io/77events/static/css/main.ee2a8b22.css",
-    "main.js": "/sarabranco92.github.io/77events/static/js/main.8e5da1c8.js",
-    "static/js/787.227b7f2b.chunk.js": "/sarabranco92.github.io/77events/static/js/787.227b7f2b.chunk.js",
-    "index.html": "/sarabranco92.github.io/77events/index.html",
-    "main.ee2a8b22.css.map": "/sarabranco92.github.io/77events/static/css/main.ee2a8b22.css.map",
-    "main.8e5da1c8.js.map": "/sarabranco92.github.io/77events/static/js/main.8e5da1c8.js.map",
-    "787.227b7f2b.chunk.js.map": "/sarabranco92.github.io/77events/static/js/787.227b7f2b.chunk.js.map"
+    "main.css": "/77events/static/css/main.887ff9b2.css",
+    "main.js": "/77events/static/js/main.4eb82644.js",
+    "static/js/787.227b7f2b.chunk.js": "/77events/static/js/787.227b7f2b.chunk.js",
+    "index.html": "/77events/index.html",
+    "main.887ff9b2.css.map": "/77events/static/css/main.887ff9b2.css.map",
+    "main.4eb82644.js.map": "/77events/static/js/main.4eb82644.js.map",
+    "787.227b7f2b.chunk.js.map": "/77events/static/js/787.227b7f2b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee2a8b22.css",
-    "static/js/main.8e5da1c8.js"
+    "static/css/main.887ff9b2.css",
+    "static/js/main.4eb82644.js"
   ]
 }
