@@ -23,7 +23,7 @@ describe("When Form is created", () => {
         })
       );
       await waitFor(() => screen.findByText("En cours"));
-      await waitFor(() => screen.findByText("Envoyer"), { timeout: 5000 });
+      await waitFor(() => screen.findByText("Envoyer"), { timeout: 1000 });
       
       expect(onSuccess).toHaveBeenCalled();
     });

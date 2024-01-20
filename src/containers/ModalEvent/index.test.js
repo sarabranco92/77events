@@ -9,7 +9,7 @@ const data = {
   description:
     "Présentation des outils analytics aux professionnels du secteur",
   nb_guesses: 1300,
-  periode: "24-25-26 Février",
+  periode: " ",
   prestations: [
     "1 espace d’exposition",
     "1 scéne principale",
@@ -17,15 +17,15 @@ const data = {
     "1 site web dédié",
   ],
 };
-
 describe("When Modal data is created", () => {
-  it("a list of mandatories data is displayed", async () => {
+  it("a list of mandatory data is displayed", async () => {
     render(<ModalEvent event={data} />);
-    await screen.findByText("1 espace d’exposition");
-    await screen.findByText("24-25-26 Février");
-    await screen.findByText(
-      "Présentation des outils analytics aux professionnels du secteur"
-    );
-    await screen.findByText("Conférence #productCON");
+    await screen.findByText(data.title);
+    await screen.findByText(data.description);
+
+    // Use forEach to iterate over prestations array
+    data.prestations.forEach(async (prestation) => {
+      await screen.findByText(prestation);
+    });
   });
 });

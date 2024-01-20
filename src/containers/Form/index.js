@@ -27,13 +27,13 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
-        onSuccess(); // Call the success handler
+        onSuccess(); 
       } catch (err) {
         setSending(false);
         onError(err);
       }
     },
-    [onSuccess, onError] // Include onSuccess if it's used
+    [onSuccess, onError] 
   );
   return (
     <form onSubmit={sendContact}>
