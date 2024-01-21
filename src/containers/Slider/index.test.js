@@ -29,7 +29,7 @@ const data = {
 describe("When slider is created", () => {
   it("a list card is displayed", async () => {
     window.console.error = jest.fn();
-    api.loadData = jest.fn().mockReturnValue(data);
+    api.loadData = jest.fn().mockReturnValue(data); //Api est remplacée par une fonction factice qui renvoie les données spécifiées dans data
     render(
       <DataProvider>
         <Slider />

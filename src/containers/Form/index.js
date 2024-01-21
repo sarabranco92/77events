@@ -1,14 +1,17 @@
+// Mis en place une simulation d'API pour le formulaire de contact. Cette simulation permet de tester les scénarios de succès et d'erreur lors de l'envoi du formulaire
 import { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 import Field, { FIELD_TYPES } from "../../components/Field";
 import Select from "../../components/Select";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 
+// Simulation d'une API de contact
 const mockContactApi = () => 
   new Promise((resolve, reject) => { 
     setTimeout(() => {
-      // Simulate a success or error scenario
-      if (Math.random() < 0.5) {
+
+      // Simule un scénario de succès ou d'erreur
+      if (Math.random() < 0.9) {
         resolve();
       } else {
         reject(new Error('Simulated API Error'));
@@ -19,6 +22,7 @@ const mockContactApi = () =>
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
 
+    // Gère l'envoi du formulaire
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
@@ -49,8 +53,8 @@ const Form = ({ onSuccess, onError }) => {
             titleEmpty
           />
           <Field placeholder="" label="Email" />
-          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
-            {sending ? "En cours" : "Envoyer"}
+          <Button data-testid="button-test-id" type={BUTTON_TYPES.SUBMIT} disabled={sending}>
+            {sending ? "En cours" : "Envoyer"} 
           </Button>
         </div>
         <div className="col">

@@ -13,6 +13,8 @@ const ModalEvent = ({ event }) => (
       </div>
       <div className="ModalEvent__title">
         <div className="ModalEvent__titleLabel">{event.title}</div>
+        {/* Modification de l'affichage de la période de l'événement */}
+        {/* Utilisation de toLocaleDateString pour formater la date en français */}
         <div className="ModalEvent__titlePeriode">{new Date(event.date).toLocaleDateString("fr",{
           year: "numeric",
           month: "long", 

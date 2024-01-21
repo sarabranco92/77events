@@ -24,19 +24,31 @@ describe("When Form is created", () => {
   });
 });
 
+// 
+
 describe("When a page is created", () => {
-  it("a list of events is displayed", () => {
-    // to implement
+
+  it("a list of events is displayed", async () => {
+    render(<Home />);
+    const eventList = await screen.findByTestId("event-list-testid");
+    expect(eventList).toBeInTheDocument();
   });
-  it("a list a people is displayed", () => {
-    // to implement
+
+  it("a list a people is displayed", async () => {
+    render(<Home />);
+    const peopleList = await screen.findByTestId("people-list-testid");
+    expect(peopleList).toBeInTheDocument();
   });
-  it("a footer is displayed", () => {
-    // to implement
-  });
+
+  it("a footer is displayed", async () => {
+    render(<Home />);
+    const footer = await screen.findByTestId("footer-testid");
+    expect(footer).toBeInTheDocument(); 
+   });
   
   it("an event card, with the last event, is displayed", async () => {
     render(<Home />);
-    await screen.findByText("Notre derniére prestation");
+    const lastEventCard = await screen.findByText("Notre derniére prestation");
+    expect(lastEventCard).toBeInTheDocument();
   });
 });

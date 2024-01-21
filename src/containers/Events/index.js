@@ -1,3 +1,5 @@
+// Dans ce code, j'ai amélioré la logique de filtrage des événements et implémenté une pagination efficace pour les événements affichés
+
 import { useState } from "react";
 import EventCard from "../../components/EventCard";
 import Select from "../../components/Select";
@@ -14,19 +16,24 @@ const EventList = () => {
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
+
+  // Filtre les événements en fonction du type sélectionné
   const filteredEvents = type
   ? data?.events.filter(event => event.type === type)
   : data?.events || [];
 
+    // Pagination des événements
   const paginatedEvents = filteredEvents.filter((event, index) => 
   (currentPage - 1) * PER_PAGE <= index && index < currentPage * PER_PAGE
 );
 
-  
+    // Change le type d'événement sélectionné et réinitialise la page courante
   const changeType = (evtType) => {
     setCurrentPage(1);
     setType(evtType);
   };
+
+    // Calcule le nombre de pages en fonction des événements filtrés
   const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1;
   const typeList = new Set(data?.events.map((event) => event.type));
   return (

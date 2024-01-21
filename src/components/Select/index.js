@@ -15,10 +15,12 @@ const Select = ({
 }) => {
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
+
+    // Fonction pour mettre à jour la valeur sélectionnée et gérer la visibilité de la liste déroulante
   const changeValue = (newValue) => {
-    onChange(newValue);  //  newValue to onChange handler
-  setValue(newValue);
-  setCollapsed(true);  
+    onChange(newValue); // Appel de la fonction onChange avec la nouvelle valeur
+    setValue(newValue); // Mettre à jour la valeur sélectionnée
+    setCollapsed(true); // Réduire la liste déroulante une fois la sélection effectuée
   };
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">

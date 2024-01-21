@@ -15,7 +15,8 @@ const EventCard = ({
     <div
       data-testid="card-testid"
       className={`EventCard${small ? " EventCard--small" : ""}`}
-      {...props}
+      {...props} // Passage de toutes les autres propriétés non spécifiées comme des attributs HTML
+ 
     >
       <div className="EventCard__imageContainer">
         <img data-testid="card-image-testid" src={imageSrc} alt={imageAlt} />

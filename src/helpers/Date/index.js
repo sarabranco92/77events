@@ -1,3 +1,4 @@
+
 export const MONTHS = {
   1: "janvier",
   2: "février",
@@ -14,3 +15,6 @@ export const MONTHS = {
 };
 
 export const getMonth = (date) => MONTHS[date.getMonth() + 1];
+
+// En JavaScript, Date.getMonth() retourne un index basé sur zéro (où janvier est 0 et décembre est 11).
+

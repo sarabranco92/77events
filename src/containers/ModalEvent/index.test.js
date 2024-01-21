@@ -23,7 +23,7 @@ describe("When Modal data is created", () => {
     await screen.findByText(data.title);
     await screen.findByText(data.description);
 
-    // Use forEach to iterate over prestations array
+    // forEach to parcourir les prestations array
     data.prestations.forEach(async (prestation) => {
       await screen.findByText(prestation);
     });

@@ -10,7 +10,7 @@ const Slider = () => {
 
   // Tri des données par date en ordre décroissant
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) > new Date(evtB.date) ? 1 : -1
+    new Date(evtA.date) > new Date(evtB.date) ? 1 : -1 //vérifie si la date de evtA est postérieure à celle de evtB 0
   );
 
   // Utilisation de useEffect pour créer un timer qui change le slide
