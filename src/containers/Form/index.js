@@ -6,18 +6,14 @@ import Select from "../../components/Select";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 
 // Simulation d'une API de contact
-const mockContactApi = () => 
-  new Promise((resolve, reject) => { 
-    setTimeout(() => {
-
-      // Simule un scénario de succès ou d'erreur
-      if (Math.random() < 0.9) {
-        resolve();
-      } else {
-        reject(new Error('Simulated API Error'));
-      }
+ const mockContactApi = () => 
+ new Promise((resolve) => { 
+   setTimeout(() => {
+     resolve(); // Résout toujours la promesse après 1000 millisecondes
     }, 1000);
-  });
+});
+
+
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
@@ -29,7 +25,7 @@ const Form = ({ onSuccess, onError }) => {
       setSending(true);
 
       try {
-        await mockContactApi();
+        await mockContactApi(); // active l'état d'envoi, appelle mockContactApi, puis désactive l'état d'envoi et appelle onSuccess ou onError selon le résultat.
         setSending(false);
         onSuccess(); 
       } catch (err) {

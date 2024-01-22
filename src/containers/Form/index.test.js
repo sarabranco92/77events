@@ -1,6 +1,8 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Form from "./index";
 
+
+//test unitaire car il se concentre sur le rendu initial du composant Form sans interaction avec d'autres composants
 jest.setTimeout(10000); // Increases the timeout to 10 seconds
 describe("When Form is created", () => {
   it("a list of information is displayed", async () => {
@@ -11,6 +13,7 @@ describe("When Form is created", () => {
     await screen.findByText("Personel / Entreprise");
   });
 
+  // test d'intégration car il simule une interaction utilisateur et vérifie l'invocation d'une fonction de rappel
   describe("and a click is triggered on the submit button", () => {
     it("the success action is called", async () => {
       const onSuccess = jest.fn();
