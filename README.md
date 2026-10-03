@@ -13,3 +13,7 @@ L'application est le site d'une agence evenementielle.
 
 ## Tests
 - `yarn test`
+
+## Setup and maintenance guide
+
+See the [project guide](docs/PROJECT_GUIDE.md) for repository-specific setup, commands, configuration, implementation limits and verification steps.
